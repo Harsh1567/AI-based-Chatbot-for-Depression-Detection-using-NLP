@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Chatpage
+{% endblock %}
+
+
+{% block content %}
+<main>
+  <link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+
+<div class="block glow">
+  <main class="container">
+    <!-- <header class="header">
+      <span class="logo">Upbeat Buddy</span>
+      
+      
+    </header> -->
+    <section class="content">
+
+
+      <section class="conversation">
+        <div class="conversation-header">
+          <div class="conversation-contact">
+            <img src="{% static 'chatbot_logo.png' %}" alt="conv-profil">
+
+            <div class="conversation-contact-info">
+              <span class="conversation-name">Convo</span>
+              <span class="conversation-online">online</span>
+            </div>
+          </div>
+
+
+        </div>
+        <section class="conversation-content">
+
+          <section class="messages">
+
+            <!-- BOT -->
+            <article class="message-container">
+              <img src="{% static 'chatbot_logo.png' %}" alt="message-img">
+
+              <div class="message">
+                <span>Hello {{request.user}}, how are you ?</span>
+                <hr><span>{{now}}</span>
+              </div>
+            </article>
+            {% for item in chats %}
+            <!-- User -->
+            <article class="message-container sended">
+              <img src="{% static 'human_logo.png' %}" alt="message-img">
+
+              <div class="message">
+                <span>{{ item.1 }}</span>
+                <hr><span>{{ item.2 }}</span>
+              </div>
+            </article>
+
+            <!-- BOT -->
+            <article class="message-container">
+              <img src="{% static 'chatbot_logo.png' %}" alt="message-img">
+
+              <div class="message">
+                <span>{{ item.0 }}</span>
+                <hr><span>{{ item.2 }}</span>
+              </div>
+            </article>
+            {% endfor %}
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br><br>
+            <form action="{% url 'chatpage' %}" method="post">
+              <div class="conversation-editor">
+                <!-- Safe -->
+                {% csrf_token %}
+                <input type="text" name="userquery" placeholder="Write a message" style="width:240%"
+                  style="float: inline-block;" />
+                <input type="submit" class="btn-info " value="Send" name="Send" style="float: inline-block" />
+                {% if activate %}
+                <input type="submit" class="btn-success " value="Check Emotion" name="Check Emotion" />
+                {% endif %}
+              </div>
+            </form>
+          </section>
+
+
+        </section>
+      </section>
+
+    </section>
+  </main>
+</div>
+
+
+<body>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+  }
+  
+  .block{
+      position: relative;
+      margin: 0 auto ;
+      width: 75%;
+
+  }
+  
+  .glow::before , .glow::after{
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      background: linear-gradient(45deg, #4684e8, #fff, #0f0f0f, #4684e8, #fff, #0f0f0f, #4684e8, #fff, #0f0f0f);
+      background-size: 400%;
+      width: calc(100% + 5px);
+      height: calc(100% + 5px);
+      z-index: -1;
+      animation: animate 20s linear infinite;
+  }
+  
+  @keyframes animate {
+      0%{
+          background-position: 0 0;
+      }
+      50%{
+          background-position: 400% 0;
+      }
+      100%{
+          background-position: 0 0;
+      }
+  }
+      
+  .glow::after{
+      filter: blur(20px);
+  }
+  .block {
+    animation: slideBottom 1s ease forwards;
+  }
+
+  @keyframes slideBottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+  </style>
+</body>
+{% endblock %}

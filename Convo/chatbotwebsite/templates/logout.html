@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+Logout
+{% endblock %}
+{% block content %}
+<h2>You have been logged out</h2>
+<br><br>
+<div class="border-top pt-3">
+    <small class="text-muted">
+        <br><br>
+        <a href="{% url 'login' %}" class="linkers nav-item">Log In Again</a>
+    </small>
+</div>
+<body>
+    <style>
+        body{
+            text-align: center;
+        }
+        h2{
+            color: #fff;
+        }
+        .linkers{
+            text-decoration: none;
+            font-size: 30px;
+            padding: 20px;
+            margin-top: 10px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+    </style>
+</body>
+{% endblock content %}

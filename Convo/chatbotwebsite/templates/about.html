@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+About
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'about.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<section class="skewedBox">
+    <div class="container1">
+        <img src=" {% static 'logo-modified1.png' %}" class="center" width="250" height="160">
+        <h1> About Us </h1>
+        <p class="p">Create a chatbot that will accept the inputs from the user and give out the appropriate response; the
+            response should be the result of the NLP model’s output. Based on the complete chat with the user, the system will predict the mental state of the person
+            using sentiment analysis. The registered user should be able to view the trends of his mental state over a
+            period of time.</p>
+    </div>
+</section>
+
+<section class="sec2">
+    <h1 class="h1 hunt">Motivation behind the Project</h1>
+    <p class="hunt">Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make healthy choices.
+        Although the terms are often used interchangeably, poor mental health and mental illness are not the
+        same things. A person can experience poor mental health and not be diagnosed with a mental illness. A
+        person with a mental illness can experience mental well-being.</p>
+</section>
+
+
+
+<div class="container">
+    <div class="header">
+        <h1> Our Team</h1>
+
+    </div>
+    <div class="sub-container" style="--clr:#0f0f0f">
+        <div class="teams">
+            <img src="{% static 'piyush.jpg' %}" alt="">
+            <div class="name">Piyush Kumar Dewangan</div>
+            <div class="desig">Frontend Developer</div>
+            <div class="social-links">
+                <a href="mailto:pshdwngn@gmail.com"><i class="fa fa-envelope nav-item"></i></a>
+                <a href="#"><i class="fa fa-github nav-item"></i></a>
+                <a href="#"><i class="fa fa-linkedin nav-item"></i></a>
+            </div>
+        </div>
+        <div class="teams" style="--clr:#0f0f0f">
+            <img src="{% static 'suyash.jpg' %}"
+                alt="">
+            <div class="name">Suyash Ramteke</div>
+            <div class="desig">Backend Developer</div>
+            <div class="social-links">
+                <a href="mailto:suyashr02@gmail.com"><i class="fa fa-envelope nav-item"></i></a>
+                <a href="#"><i class="fa fa-github nav-item"></i></a>
+                <a href="#"><i class="fa fa-linkedin nav-item"></i></a>
+            </div>
+        </div>
+        <div class="teams" style="--clr:#0f0f0f">
+            <img src="{% static 'vyas.jpg' %}"
+                alt="">
+            <div class="name">Vyas Verma</div>
+            <div class="desig">Backend Developer</div>
+            <div class="social-links">
+                <a href="mailto:"><i class="fa fa-envelope nav-item"></i></a>
+                <a href="#"><i class="fa fa-github nav-item"></i></a>
+                <a href="#"><i class="fa fa-linkedin nav-item"></i></a>
+            </div>
+        </div>
+        <div class="teams" style="--clr:#0f0f0f">
+            <img src="{% static 'ritesh.jpg' %}"
+                alt="">
+            <div class="name">Suyash Ramteke</div>
+            <div class="desig">Designer</div>
+            <div class="social-links">
+                <a href="mailto:y#"><i class="fa fa-envelope nav-item"></i></a>
+                <a href="#"><i class="fa fa-github nav-item"></i></a>
+                <a href="#"><i class="fa fa-linkedin nav-item"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<body>
+    <style>
+        .sec2 { 
+            color: #fff;
+        }  
+        .sec2 p {
+            text-indent: -10px;
+        }
+        h1{
+            color: #0f0f0f;
+        }
+        .sec2 h1 { 
+            color: #fff;
+        }
+        .p {
+            color: #0f0f0f;
+        }
+        .container1, .sec2{
+            padding-top: 25px;
+        }
+        .teams:hover {
+            background: var(--clr);
+            box-shadow: 0 0 35px var(--clr);
+        }
+        .name, .desig { 
+            color: #4684e8;
+        }
+        {% comment %} .teams img{
+            transition: 0.5s;
+        }
+        .teams img:hover {
+            transform: scale(1.1);
+        } {% endcomment %}
+        i{
+            padding: 5px;
+        }
+        .teams img,.container1 img,h1,p,div.name,div.desig,div.social-links {
+            animation: slideBottom 1s ease forwards;
+          }
+        
+          @keyframes slideBottom {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+         h1.hunt,p.hunt{
+            animation: slideLeft 1s ease forwards;
+          }
+        
+        @keyframes slideLeft {
+          0% {
+              transform: translateX(100px);
+              opacity: 0;
+          }
+          100% {
+              transform: translateX(0);
+              opacity: 1;
+          }
+        }
+        
+    </style>
+  
+  </body>
+
+
+{% endblock %}

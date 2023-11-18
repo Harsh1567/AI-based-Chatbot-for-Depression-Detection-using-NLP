@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Convo
+{% endblock %}
+
+{% block content %}
+
+<main>
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  <section class="left-sec">
+    <h3> We Are Here For Your Care</h3>
+    <h1> Convo </h1>
+    <p>We are here for your care 24/7. Any help just chat us.</p>
+    <a href="/chatpage">
+      <button class="btns">
+        Let's talk
+      </button></a>
+  </section>
+
+  <section class="right-sec">
+    <figure>
+      <img src="{% static 'img.png' %}">
+    </figure>
+  </section>
+</main>
+<body>
+  <style>
+    h3,h1,p,button {
+      color: #fff;
+    }
+    button{ 
+      animation: slideRight 1s ease forwards;
+    } 
+     
+    @keyframes slideRight {
+      0% {
+          transform: translateY(100px);
+          opacity: 0;
+      }
+      100% {
+          transform: translateY(0);
+          opacity: 1;
+      }
+  } 
+
+  p {
+    animation: slideBottom 1s ease forwards;
+  }
+
+  @keyframes slideBottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+} 
+
+  h1 {
+    animation: slideLeft 1s ease forwards;
+  }
+
+@keyframes slideLeft {
+  0% {
+      transform: translateX(100px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+section img {
+  animation: zoomIn 1s ease forwards;
+}
+
+@keyframes zoomIn {
+0% {
+    transform: scale(0);
+    opacity: 0;
+}
+100% {
+    transform: scale(1);
+    opacity: 1;
+}
+}
+
+h3{
+  animation: slideTop 1s ease forwards;
+}
+@keyframes slideTop {
+  0% {
+      transform: translateX(-100px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+button.btns{  
+  transition: 0.2s;
+}
+button.btns:hover{
+  color: #000;
+  background-color: #4684e8;
+  box-shadow: 0 0 10px #4684e8, 0 0 40px #4684e8, 0 0 80px #4684e8;
+}  
+
+  </style>
+
+</body>
+
+{% endblock %}
