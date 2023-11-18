@@ -23,11 +23,3 @@ The AI-based chatbot aims to assist in detecting signs of depression in users th
 - **Tensorflow Model:** Implements Tensorflow for enhanced analysis and detection.
 - **Depression Detection:** The chatbot is designed to identify potential signs of depression in user responses.
 
-## Getting Started
-
-To run the project locally, follow these steps:
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/depression-detection-chatbot.git
